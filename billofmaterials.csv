@@ -1,0 +1,11 @@
+Part,Description,Quantity,Manufacturer,Part Number,Datasheet,Price (EGP),Total Price (EGP)
+Arduino Uno,Arduino Uno Rev3,1,Arduino,A000066,https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf,450,450
+Motor driver,L298N dual H-bridge Motor driver,1,Hanshon Technology,L298N,https://www.hanshontec.com/dataspecs/L298N%20Motor%20Driver.pdf,85,85
+Battery,9V,1,Energizer,6LR61,https://data.energizer.com/pdfs/522.pdf,35,35
+DC motor,Mini dc gearbox with black shaft,1,Hanshon Technology,Fam1029,https://hansontec.com/dataspecs/motor_fan/Dual%20Shaft%20Mini%20Gear%20Motor.pdf,75,75
+Battery Clip,-,1,-,MC002493,https://www.farnell.com/datasheets/3179133.pdf,9,9
+Switch,Tactile Push Button Switch,2,OMRON,B3FS-4,https://docs.rs-online.com/1b59/0900766b81126ccb.pdf,1,2
+Jumper Wires,Male-to-Male & Male-to-Female,Several,BPS,ZW-MM-20 & ZW-MF-20,https://eu.mouser.com/datasheet/2/58/BPS-DAT-(KIT-ZWx4)-Datasheet-1282851.pdf,1.5,3
+Temperature Sensor,LM35 DZ,1,Texas Instruments,LM35DZ,https://www.alldatasheet.com/datasheet-pdf/pdf/520582/TI/LM35DZ.html,175,175
+Breadboard,Breadboard 840 pin,1,Multicomp,MC01000,https://www.farnell.com/datasheets/2013247.pdf,45,45
+LCD,LCD Shield with Keypad,1,DFRobot,DFR0009,https://media.digikey.com/pdf/Data%20Sheets/DFRobot%20PDFs/DFR0009_Web.pdf,120,120
