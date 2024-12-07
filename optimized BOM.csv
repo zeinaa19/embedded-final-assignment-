@@ -1,0 +1,7 @@
+Part,Description,Quantity,Manufacturer,Part Number,Data Sheet,Price,Total Price
+AVR Controller,ATMEGA32-16AU SMD IC TQFP-44 Microcontroller,1,Atmel,ATmega32-16AU,https://pdf.direnc.net/upload/atmega32-16au-8-bit-16mhz-smd-mikrodenetleyici-tqfp44-datasheet.pdf,265,265
+PCB,Hand made printed circuit board instead of Arduino,1,-,-,-,15,15
+16x2 LCD with I2C Adapter,Instead LCD with shield,1,Hitachi,HD44780U,https://soldered.com/productdata/2015/02/Soldered_HD44780_datasheet.pdf,75,75
+DS18B20 Digital Temperature Sensor,Instead of LM35DZ temperature sensor,1,Makers Electronics,DS18B20,https://www.analog.com/media/en/technical-documentation/datasheets/DS18B20.pdf,50,50
+Copper Wires,Copper PCB soldering wire 0.10mm,1,PPA,B09PZ9QVT1,https://www.canman.ch/wp-content/uploads/2017/07/Copper_Wire_Specification.pdf,12,12
+Motor Driver,L9110 Dual Motor Driver,1,-,L9110,https://www.laskakit.cz/user/related_files/L9110_2_channel_motor_driver.pdf,60,60
