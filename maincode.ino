@@ -2,6 +2,7 @@
 #include "analogdigital.h"
 #include "Lcd.h"
 #include "DC_Motor.h"
+#include <EEPROM.h>
 #include <stdlib.h>
 
 
@@ -15,7 +16,7 @@ void buttoninit() {
 }
 
 int uaddress = 0 ;
-int laddress = 0 ;
+int laddress = 1 ;
 
 int main (void) {
     buttoninit();
