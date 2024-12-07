@@ -14,6 +14,8 @@ void buttoninit() {
     PORTD |= (1 << PD0);
 }
 
+int uaddress = 0 ;
+int laddress = 0 ;
 
 int main (void) {
     buttoninit();
@@ -21,8 +23,8 @@ int main (void) {
     LCD_Init();
     float temperature;
     unsigned short adcsensor;
-    unsigned short upper = 0;
-    unsigned short lower = 0;
+    unsigned short upper = EEPROM.read(uaddress);
+    unsigned short lower = EEPROM.read(laddress);
     unsigned char buffer[6];
     
     while (1) {
@@ -35,10 +37,12 @@ int main (void) {
 
         if (((PINB >> PB4) & 1) == 0) {
             lower += 5;
+            EEPROM.update(laddress, lower);
             _delay_ms(200);
         }
         if (((PINB >> PB5) & 1) == 0) {
             upper += 5;
+            EEPROM.update(uaddress, upper);
             _delay_ms(200);
         }
         if (((PIND >> PD0) & 1) == 0) {
