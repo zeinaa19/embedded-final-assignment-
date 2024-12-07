@@ -5,6 +5,16 @@
 #include <stdlib.h>
 
 
+void buttoninit() {
+    DDRB = DDRB & ~(1 << PB4);
+    PORTB = PORTB | (1 << PB4);
+    DDRB = DDRB & ~(1 << PB5);
+    PORTB = PORTB | (1 << PB5);
+    DDRD &= ~(1 << PD0);
+    PORTD |= (1 << PD0);
+}
+
+
 int main (void) {
     buttoninit();
     Adc_Init();
@@ -71,11 +81,3 @@ int main (void) {
     return 0;
 }
 
-void buttoninit() {
-    DDRB = DDRB & ~(1 << PB4);
-    PORTB = PORTB | (1 << PB4);
-    DDRB = DDRB & ~(1 << PB5);
-    PORTB = PORTB | (1 << PB5);
-    DDRD &= ~(1 << PD0);
-    PORTD |= (1 << PD0);
-}
