@@ -1,0 +1,155 @@
+*** Settings ***
+Documentation    Embedded Systems Project Test Cases
+
+*** Test Cases ***
+Test Case 1:Initialization of the System and the LCD Display
+    [Documentation]    [Make sure the system starts up properly, reads initial values from EEPROM, and displays them on the LCD .]
+    
+    [Setup steps]
+    Power on the system
+    Ensure that ADC, motor,buttons, and LCD components are connected
+    Preprogram EEPROM with known values for lower and upper limits (eg:0)
+
+    [Action steps]
+    Allow the system to initialize and display the initial values on the LCD
+
+    [Assertion steps]
+    Verify the initial temperature reading on the LCD
+    Verify that "L:" and "U:" display the initial lower and upper limit values from EEPROM
+    Verify the LCD displays "Nok" if temperature is outside the limits
+
+Test Case 2: [Adjust the Lower Limit by Pressing the Button]
+    [Documentation]    [Ensure that the value on the LCD is updated accurately by pressing the button designated to raise the lower limit]
+    
+    [Setup steps]
+    Confirm that the LCD is showing the system's temperature
+    Ensure the lower limit is initially set to 0
+
+    [Action steps]
+    Continuously press the the lower limit button 
+    
+    [Assertion steps]
+    Verify that the LCD's lower limit increases by 5 with each press 
+    Verify that the temperature display and higher limit don't change unexpectedly
+
+
+Test Case 3: [Adjust Upper Limit with Button Press]
+    [Documentation]    [ensure that the value on the LCD is updated accurately by pressing the button designated to raise the upper limit]
+    
+    [Setup steps]
+    Confirm that the LCD is showing the system's temperature
+    Set the initial upper limit to 0
+
+    [Action steps]
+    Press the button for the upper limit incrementally
+
+    [Assertion steps]
+    Verify that the LCD's upper limit increases by 5 with each press 
+    Confirm that the lower limit and temperature display remain unchanged
+
+
+Test Case 4: [Display "OK" when Temperature is Within Range]
+    [Documentation]    [Confirm that when the current temperature is between the lower and upper limits, the LCD displays "OK" and that the motor turns clockwise ]
+    
+    [Setup steps]
+    Set lower limit to 20 and upper limit to 30
+    Set the sensor to a temperature within this range 
+    
+    [Action steps]
+    Allow the sensor to read the temperature and display it
+
+    [Assertion steps]
+    Verify that the LCD displays "OK" in the designated location
+    Verify that the motor, which indicates that the temperature is within range, is activated and is turning clockwise
+  
+
+    
+    Test Case 5: [Display "Nok" when Temperature is Outside Range]
+    [Documentation]    [Ensure that the LCD shows "Nok" and that the motor turns anti clockwise when the current temperature is outside the designated range]
+    
+    [Setup steps]
+    Set lower limit to 10 and upper limit to 20
+    Set the sensor to a temperature outside this range 
+
+    [Action steps]
+    Allow the sensor to read the temperature and display it
+    
+
+    [Assertion steps]
+    Verify that "Nok" appears on the LCD in the designated location
+    Ensure that the motor is activated and is turning counterclockwise 
+
+
+    Test Case 6: [Reset Limits with Reset Button]
+    [Documentation]    [Verify that pressing the reset button resets both lower and upper limits to 0 and updates the LCD]
+    
+    [Setup steps]
+    Set the lower limit to 10 and the upper limit to 30 using the buttons
+
+    [Action steps]
+   Press the reset button
+
+    [Assertion steps]
+    Verify that both lower and upper limits are reset to 0.
+    Verify that the LCD displays "L:0" and "U:0".
+
+    Test Case 7: [LCD Display Accuracy]
+    [Documentation]    [Ensure that, the LCD accurately shows the temperature as well as both the upper and lower limits]
+    
+    [Setup steps]
+    Set the lower limit to 10 and the upper limit to 40.
+    Simulate a temperature of 25.7C.
+    
+    [Action steps]
+    Allow the system to display the temperature and limits on the LCD
+
+    [Assertion steps]
+    Verify that the LCD accurately displays the temperature as "25.7C".
+    Verify that "L:10" and "U:40" are displayed without truncation or formatting errors
+
+
+    Test Case 8: [Extreme Temperature Change Outside of Range]
+    [documentation]    [Confirm that the system correctly handles a temperature significantly outside the defined range]
+ 
+    
+    [Setup steps]
+    Set lower limit to 15C and upper limit to 25C
+    Set initial temperature within range
+
+    [Action steps]
+    simulate a sudden temperature change to 40C
+
+    [Assertion steps]
+    The LCD should display "Nok"
+    The motor should turn anticlockwise 
+
+
+    Test Case 9: [Lower Limit Boundary Condition]
+    [documentation]    [Verify the reaction of the system when the temperature is exactly at the lower limit]
+ 
+    [Setup steps]
+    Set lower limit to 15C and upper limit to 25C
+
+    [Action steps]
+    Simulate the temperature being exactly at 15C
+
+    [Assertion steps]
+    The LCD should display "OK" (indicating within range)
+    The motor should turn clockwise
+
+
+    Test Case 10: [Upper Limit Boundary Condition]
+    [documentation]    [Verify the reaction of the system when the temperature is exactly at the upper limit]
+ 
+    [Setup steps]
+    Set lower limit to 15C and upper limit to 25C
+
+    [Action steps]
+    Simulate the temperature being exactly at 25C
+
+    [Assertion steps]
+    The LCD should display "NOK" (indicating out of range)
+    The motor should turn counterclockwise 
+
+    
+
