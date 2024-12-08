@@ -1,1 +1,26 @@
+## assignment fowchart
+```plantuml
 
+
+@startuml
+start
+
+:initialize_system;
+repeat
+if (temp_within_limit) then (yes)
+  :write_to_uart "ok";
+  :"motor turns clockwise";
+endif
+if (temp_not_within_limit) then (yes)
+  :write_to_uart "nok";
+  :"motor turns anticlockwise;
+
+
+
+endif
+
+repeat while (true?)
+->no;
+stop
+@enduml
+```
