@@ -81,10 +81,13 @@ Indicate constraints of the low level design and any assumptions appropriate for
 (*) --> init
 --> configure
 if lowerlimit< value > upperlimit 
-  --> motor turns clockwise and LCD displays "OK"
+  --> motor turns clockwise 
+  --> LCD displays "OK"
   --> (*)
 else
-  --> motor turns anti-clockwise and LCD displays "NOK"
+  --> motor turns anti-clockwise 
+  --> LCD displays "NOK"
+
 endif
 @enduml
 ```
