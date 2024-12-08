@@ -50,22 +50,24 @@ The climate control system that we did in this project is used in many industria
 This section describes where this module resides in the context of the software architecture
 ```plantuml
 @startuml
-rectangle UartApp #orange {
-  rectangle Application
-    rectangle MCU #green {
-        rectangle LCD
-        rectangle KeyPad
-    }
 
-    rectangle MCAL #skyblue {
-            rectangle ADC
-            rectangle UART
-            rectangle DIO
-            rectangle Register
-    }
-    
-    Application -[hidden]-> MCU
-    MCU -[hidden]-> MCAL
+node "adc module"{
+}
+node "lcd module"{
+}
+node "uart module"{
+}
+node "main app"{
+}
+node "motor module"{
+}
+node "pwm module"{
+} 
+    "main app" --> "uart module" 
+    "main app" --> "lcd module" 
+    "uart module" --> "adc module" 
+    "adc Module" --> "pwm module"
+    "pwm Module" --> "motor module"
 }
 @enduml
 
