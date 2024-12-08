@@ -1,6 +1,6 @@
 Part,Description,Quantity,Manufacturer,Part Number,Datasheet,Price (EGP),Total Price (EGP)
 AVR Controller,"ATMEGA32-16AU SMD IC TQFP-44 Microcontroller",1,Atmel,"ATmega32-16AU",https://pdf.direnc.net/upload/atmega32-16au-8-bit-16mhz-smd-mikrodenetleyici-tqfp44-datasheet.pdf,265,265
-Motor Driver,"L298N dual H-bridge Motor driver",1,Hands on Technology,"L298N",https://www.handsontec.com/dataspecs/L298N%20Motor%20Driver.pdf,85,85
+Motor Driver,"L9110 Dual Motor Driver ",1,-,"L9110",https://www.laskakit.cz/user/related_files/l9110_2_channel_motor_driver.pdf,60,60
 Battery,"9V",1,Energizer,"6LR61",https://data.energizer.com/pdfs/522.pdf,35,35
 DC Motor,"Mini dc gearbox with black shaft",1,Hands on Technology,"Fam 1029",https://handsontec.com/dataspecs/motor_fan/Dual%20Shaft%20Mini%20Gear%20Motor.pdf,75,75
 Battery Clip,"-",1,-,"MC002493",https://www.farnell.com/datasheets/3179133.pdf,9,9
