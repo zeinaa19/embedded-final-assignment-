@@ -1,5 +1,5 @@
 Part,Description,Quantity,Manufacturer,Part Number,Datasheet,Price (EGP),Total Price (EGP)
-Arduino Uno,Arduino Uno Rev3,1,Arduino,A000066,https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf,450,450
+Arduino Uno,"Arduino Uno Rev3",1,Arduino,"A000066",https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf,450,450
 Motor driver,L298N dual H-bridge Motor driver,1,Hanshon Technology,L298N,https://www.hanshontec.com/dataspecs/L298N%20Motor%20Driver.pdf,85,85
 Battery,9V,1,Energizer,6LR61,https://data.energizer.com/pdfs/522.pdf,35,35
 DC motor,Mini dc gearbox with black shaft,1,Hanshon Technology,Fam1029,https://hansontec.com/dataspecs/motor_fan/Dual%20Shaft%20Mini%20Gear%20Motor.pdf,75,75
