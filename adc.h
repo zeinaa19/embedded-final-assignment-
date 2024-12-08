@@ -1,5 +1,5 @@
-#ifndef _ADC_
-#define _ADC_
+#ifndef __ADC__
+#define __ADC__
 
 void Adc_Init(void);
 
