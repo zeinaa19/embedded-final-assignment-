@@ -157,5 +157,32 @@ Test Case 11: [Functionality of the limits buttons at once]
 
 
 
-    
+    Test Case 12: [Functionality of pwm at half of the maximum speed]
+    [documentation]    [check if the value provided for the pwm changes the motor speed]
+ 
+    [Setup steps]
+    Connect the circuit components
+    connect the Arduino to the pc
+
+    [Action steps]
+    change the motor speed in the code to 126
+
+
+    [Assertion steps]
+    the motor will rotate at 50% of the maximum speed.
+
+
+Test Case 13: [Functionality of pwm at the maximum speed]
+    [documentation]    [check if the value provided for the pwm changes the motor speed]
+ 
+    [Setup steps]
+    Connect the circuit components
+    connect the Arduino to the pc
+
+    [Action steps]
+    change the motor speed in the code to 255
+
+    [Assertion steps]
+    the motor will rotate at the maximum speed.
+
 
