@@ -1,4 +1,6 @@
-#include <avr/io.h>
+#if !defined(__AVR_ATmega328P__)
+#include <avr/iom328p.h>
+#endif
 #include "adc.h"
 
 void Adc_Init(void)
@@ -13,13 +15,15 @@ void Adc_Init(void)
 unsigned short Adc_ReadChannel(unsigned char ch)
 {
 
+
   ch &= 0b00000111;  
   ADMUX = (ADMUX & 0xF8)|ch; 
  
 
   ADCSRA |= (1<<ADSC);
- 
+
   while(ADCSRA & (1<<ADSC));
  
   return (ADC);
+
 }
