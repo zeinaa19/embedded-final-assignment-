@@ -23,7 +23,9 @@ For this project design and implementation we created a circuit with the functio
 ### Scope
 
 
+### Industrial Application
 
+The climate control system that we did in this project is used in many industrial applications. It is used in HVAC systems to keep indoor are at an acceptable temperature while also saving energy. In industrial machine cooling, the system keeps the equipment from overheating by adjusting the fan operation. It is used in server rooms and data centers as keeping certain temperature ranges is important to prevent equipment from malfunctioning. The system is also used in agriculture to control the temperature in greenhouses and storage buildings. Lastly, in batteries to make them work better and last longer.
 ## Architectural Overview
 
 This section describes where this module resides in the context of the software architecture
