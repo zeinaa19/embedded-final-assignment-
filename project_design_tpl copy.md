@@ -92,7 +92,11 @@ endif
 The functionality is as follows, the code reads the value of the ADC sensor ("sensorreading") and uses the equation of the LM35 to convert it to temperature, compares it with the limits set by push buttons, displays it on the LCD, and rotates the motor. It sets up the push button input pins, ADC, UART,LCD modules and their upper and lower limits stored values in the EEPROM. The code converts the sensor value which is an integer from the ADC into a string, sends it over UART, and displays the string and current limits set on the LCD. The upper and lower limits can be changed by pressing the push buttons. If the sensor reading is within the range set, the code turns the motor clockwise and displays "OK" on the LCD, the pwm will set the motor speed. If not, the motor will rotate counterclockwise and display "NOK" on the LCD, and the pwm will also set the motor speed. This displays real-time monitoring and control of an analog input with adjustable parameters.
 
 ## Implementation of the Module
-This chapter discusses the detailed design of the module.
+ADC Initialization: Sets up the ADC for the designated channels.
+
+LCD Display Functions: Shows the sensor type, current reading, and threshold limits.
+
+This circuit uses Arduino to portray analog to digital conversion and the displays the digital signals then on the LCD, the circuit uses an LM35 temperature sensor and an LCD screen, buttons and a motor. The motor is used as an indicator to turn in a certain direction depending on the current temperature with the limits set wether in range or not. The Arduino processes the LM35s anolog value input signal and user set limits are shown on the 16x2 LCD display screen almost immediately. The system is constantly reading the LM35s output and checks if the value is within the limit using the ADC. This system is close to simulating real world control systems in a system where the weather is controlled, such as an AC system. the whole system created would be very useful in an AC system. The temperature sensor would be very useful for to be used as a method of determining if the surrounding temperatures within the limit that the user has set. If the user sets that the AC provide a required temperature of 25 degrees, then the temperature sensor will check the existing temperature compared to the limit that the user has send and adjust accordingly.
 
 ## Integration and Configuration
 ### Static Files
