@@ -46,42 +46,42 @@ int main(void) { // beginning of main code that returns a integer and doesn't re
         itoa(lower, buffer, 10); // converts the Lower limit value to a string so it can be displayed on the LCD
         LCD_String(buffer); // /displays the value stored in the buffer for the upper limit
 
-        if (((PIND >> PD0) & 1) == 0) {
-            upper =upper+3;
-            EEPROM.update(addressup, upper);
-            _delay_ms(300);
+        if (((PIND >> PD0) & 1) == 0) { //this if contition is used to check if the button is pressed or not
+            upper =upper+3; // if the button is pressed the upper limit will increase by 3
+            EEPROM.update(addressup, upper); // this updates the value stored in the eeprom, it makes the new adressup =  upper
+            _delay_ms(300); // we added a delay of 300 milliseconds to ensure the code runs smoothly
         }
 
-        // Button 2 (Decrease limit)
-        if (((PINB >> PB5) & 1) == 0) {
-            lower =lower+3;
-            EEPROM.update(addresslow, lower);
-            _delay_ms(300);
+        
+        if (((PINB >> PB5) & 1) == 0) { //this if contition is used to check if the button is pressed or not
+            lower =lower+3; // if the button is pressed the lower limit will increase by 3
+            EEPROM.update(addresslow, lower); // this updates the value stored in the eeprom, it makes the new adresslow = lower
+            _delay_ms(300); // we added a delay of 300 milliseconds to ensure the code runs smoothly
         }
 
-        // Button 3 (Switch limit control)
-        if (((PINB >> PB4) & 1) == 0) {
-            upper=0;
-            lower=0;
-            EEPROM.update(addressup, upper);
-            EEPROM.update(addresslow, lower);
-            _delay_ms(300);
+        
+        if (((PINB >> PB4) & 1) == 0) { { //this if contition is used to check if the button is pressed or not
+            upper=0; // if button is pressed makes upper = 0
+            lower=0; // if button is pressed makes lower = 0
+            EEPROM.update(addressup, upper); // this updates the value stored in the eeprom, it makes the new adressup =  upper
+            EEPROM.update(addresslow, lower); // this updates the value stored in the eeprom, it makes the new adresslow = lower
+            _delay_ms(300); // we added a delay of 300 milliseconds to ensure the code runs smoothly
         }
 
-        if (sensorreading >= lower && sensorreading < upper) {
-            LCD_Command(0x8E);
-            LCD_String("OK");
-            DC_Start(0, clockwise, 100);  // Start motor clockwise
+        if (sensorreading >= lower && sensorreading < upper) { //this checks if the tempereture sensor value is inside the range or not
+            LCD_Command(0x8E);  // moves curser to a specified charecter in this case the 15th
+            LCD_String("OK"); //displays "OK" if the value is in the range
+            DC_Start(0, clockwise, 100);  // Start motor conected to channel 0 clockwise 
             _delay_ms(500);  // Motor runs for 500ms
-            DC_Stop(0);
-            _delay_ms(1000);
+            DC_Stop(0); // motor stops
+            _delay_ms(1000); // mottor stops for 1000ms
         } else {
-            LCD_Command(0x8D);
-            LCD_String("NOK");
-            DC_Start(0, anticc, 100);  // Start motor counterclockwise
+            LCD_Command(0x8D); // moves curser to a specified charecter in this case the 14th
+            LCD_String("NOK"); //displays "NOK" if the value is not in the range
+            DC_Start(0, anticc, 100);  // / Start motor conected to channel 0 anticlockwise 
             _delay_ms(500);  // Motor runs for 500ms
-            DC_Stop(0);
-            _delay_ms(1000);
+            DC_Stop(0); // motor stops
+            _delay_ms(1000); // mottor stops for 1000ms
         }
         
     }
@@ -89,10 +89,10 @@ int main(void) { // beginning of main code that returns a integer and doesn't re
 }
 
 void buttoninit(){
-  DDRD &= ~(1 << PD0);  // PD0 as input (Increase limit)
+  DDRD &= ~(1 << PD0);  // PD0 as input 
   PORTD |= (1 << PD0);  // Enable pull-up resistor for PD0
-  DDRB &= ~(1 << PB4);  // PB4 as input (Decrease limit)
+  DDRB &= ~(1 << PB4);  // PB4 as input
   PORTB |= (1 << PB4);  // Enable pull-up resistor for PB4
-  DDRB &= ~(1 << PB5);  // PB5 as input (Switch between limits)
+  DDRB &= ~(1 << PB5);  // PB5 as input 
   PORTB |= (1 << PB5);  // Enable pull-up resistor for PB5
 }
