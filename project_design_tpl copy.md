@@ -80,12 +80,11 @@ Indicate constraints of the low level design and any assumptions appropriate for
 @startuml
 (*) --> init
 --> configure
-if value > 15
-  --> increment value
+if lowerlimit< value > upperlimit 
+  --> motor turns clockwise and LCD displays "OK"
   --> (*)
 else
-  --> decrement value
-  --> (*)
+  --> motor turns anti-clockwise and LCD displays "NOK"
 endif
 @enduml
 ```
