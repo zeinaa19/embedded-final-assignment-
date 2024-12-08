@@ -89,7 +89,7 @@ endif
 ```
 
 ## Functional Description
-The following chapter describes the software functionality.  The following is a list of suggested sections to be considered for inclusion.
+The functionality is as follows, the code reads the value of the ADC sensor ("sensorreading") and uses the equation of the LM35 to convert it to temperature, compares it with the limits set by push buttons, displays it on the LCD, and rotates the motor. It sets up the push button input pins, ADC, UART,LCD modules and their upper and lower limits stored values in the EEPROM. The code converts the sensor value which is an integer from the ADC into a string, sends it over UART, and displays the string and current limits set on the LCD. The upper and lower limits can be changed by pressing the push buttons. If the sensor reading is within the range set, the code turns the motor clockwise and displays "OK" on the LCD, the pwm will set the motor speed. If not, the motor will rotate counterclockwise and display "NOK" on the LCD, and the pwm will also set the motor speed. This displays real-time monitoring and control of an analog input with adjustable parameters.
 
 ## Implementation of the Module
 This chapter discusses the detailed design of the module.
