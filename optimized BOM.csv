@@ -4,7 +4,7 @@ Motor Driver,"L9110 Dual Motor Driver ",1,-,"L9110",https://www.laskakit.cz/user
 Battery,"9V",1,Energizer,"6LR61",https://data.energizer.com/pdfs/522.pdf,35,35
 DC Motor,"Mini dc gearbox with black shaft",1,Hands on Technology,"Fam 1029",https://handsontec.com/dataspecs/motor_fan/Dual%20Shaft%20Mini%20Gear%20Motor.pdf,75,75
 Battery Clip,"-",1,-,"MC002493",https://www.farnell.com/datasheets/3179133.pdf,9,9
-Switch,"Tactile Push Button Switch",2,OMRON,"B3FS-4",https://docs.rs-online.com/1b59/0900766b81126ccb.pdf,1,2
+Switch,"Tactile Push Button Switch",3,OMRON,"B3FS-4",https://docs.rs-online.com/1b59/0900766b81126ccb.pdf,1,3
 Copper Wires,"Copper PCB soldering wire 0.10mm",1,PPA,"B09PZ9QVT1",https://www.canman.ch/wp-content/uploads/2017/07/Copper_Wire_Specification.pdf,12,12
 Temperature Sensor,"DS18B20 Digital Temperature Sensor",1,Makers Electronics,"DS18B20",https://www.analog.com/media/en/technical-documentation/data-sheets/DS18B20.pdf,50,50
 PCB,"Handmade printed circuit board instead of Arduino",1,-,-,-,15,15
