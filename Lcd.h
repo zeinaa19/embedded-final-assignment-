@@ -1,5 +1,5 @@
-#ifndef _LCD_
-#define _LCD_ 
+#ifndef __LCD__
+#define __LCD__ 
 
 void LCD_Command(unsigned char cmnd);
 void LCD_Char (unsigned char char_data);
@@ -8,4 +8,4 @@ void LCD_String (char *str);
 void LCD_String_xy (char row, char pos, char *str);
 void LCD_Clear();
 
-#endif 
+#endif /*__LCD__*/
