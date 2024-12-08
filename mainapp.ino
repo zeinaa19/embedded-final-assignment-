@@ -1,48 +1,50 @@
-#include <util/delay.h>
-#include "analogdig.h"
-#include <EEPROM.h>
-#include "Lcd.h"
-#include "Uart.h"
-#include "pwm.h"
-#include "motorr.h"
-#include <stdlib.h>
+#include <util/delay.h>  // including delay library to allow delays in the code
+#include "analogdig.h" // including analog to digital converter file
+#include <EEPROM.h> // including EEPROM library
+#include "Lcd.h" // including LCD display file
+#include "Uart.h" // Including UART file
+#include "pwm.h" // including pwm file
+#include "motorr.h" // including motor control file
+#include <stdlib.h> // including library which is used for later conversions
 
-int addresslow = 0;
-int addressup = 5;
+int addresslow = 0; //defines storage address for EEPROM lower limit 
+int addressup = 5;   //defines storage address for EEPROM upper limit 
 
-int main(void) {
-    unsigned short sensorreading;
-    unsigned short upper = EEPROM.read(addressup);
-    unsigned short lower = EEPROM.read(addresslow);
-    unsigned char buffer[4];
+int main(void) { // beginning of main code that returns a integer and doesn't require arguments
+    unsigned short sensorreading; // defining "sensorreading" as a variable that only holds positive integers and holds numbers up to 16 bits
+    unsigned short upper = EEPROM.read(addressup); //define variable "upper" to store value in addressup of EEPROM
+    unsigned short lower = EEPROM.read(addresslow); //define variable "lower" to store value in addresslow of EEPROM
+    unsigned char buffer[4]; // Define the buffer as an unsigned character that holds only +ve integers to store 4 elements
 
     // Initialize modules
-    Adc_Init();
-    Uart_Init();
-    LCD_Init();
-    buttoninit();
+    Adc_Init(); // initialization for ADC
+    Uart_Init(); // initialization for UART
+    LCD_Init(); // initialization for LCD
+    buttoninit(); // initialization for buttons
 
-    while (1) {
+    while (1) { // using while (1) as an infinite continuous loop
         _delay_ms(200);  // Short delay for smooth execution
 
         // Read sensor value
-        sensorreading = (Adc_ReadChannel(1)*150*5)/(1023*1.5);
-        itoa(sensorreading, buffer, 10);
-        Uart_SendString(buffer, 4);
-        Uart_SendChar('\n');
+        sensorreading = (Adc_ReadChannel(1)*150*5)/(1023*1.5);  //Read the ADC value from channel 1, convert to temperature, and store in sensorreading
+        itoa(sensorreading, buffer, 10); //Convert the temperature reading to a string and store it in buffer
+        Uart_SendString(buffer, 4); //  Send the temperature string through UART
+        Uart_SendChar('\n'); //  this sends a newline character to indicate the end of the data
 
         // Display sensor and limit values on LCD
-        LCD_Clear();
-        LCD_String("TempVal: ");
-        LCD_String(buffer);
-        LCD_String("C ");
-        LCD_Command(0xC0);
-        itoa(upper, buffer, 10);
-        LCD_String("U: ");
-        LCD_String(buffer);
-        LCD_String("  L: ");
-        itoa(lower, buffer, 10);
-        LCD_String(buffer);
+        LCD_Clear(); // clear LCD
+        LCD_String("TempVal: "); //displays the word"TempVal:"
+        LCD_String(buffer); //displays the value stored in the buffer for TempVal
+        LCD_String("C "); // displays degree celcius
+
+        
+        LCD_Command(0xC0); // command is used to shift to the second row of the LCD
+        itoa(upper, buffer, 10); // converts the upper limit value to a string so it can be displayed on the LCD
+        LCD_String("U: "); // This displays "U:"
+        LCD_String(buffer); //displays the value stored in the buffer for the upper limit
+        LCD_String("  L: "); // displays "L:"
+        itoa(lower, buffer, 10); // converts the Lower limit value to a string so it can be displayed on the LCD
+        LCD_String(buffer); // /displays the value stored in the buffer for the upper limit
 
         if (((PIND >> PD0) & 1) == 0) {
             upper =upper+3;
