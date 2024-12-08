@@ -8,4 +8,5 @@ Switch,"Tactile Push Button Switch",2,OMRON,"B3FS-4",https://docs.rs-online.com/
 Copper Wires,"Copper PCB soldering wire 0.10mm",1,PPA,"B09PZ9QVT1",https://www.canman.ch/wp-content/uploads/2017/07/Copper_Wire_Specification.pdf,12,12
 Temperature Sensor,"DS18B20 Digital Temperature Sensor",1,Makers Electronics,"DS18B20",https://www.analog.com/media/en/technical-documentation/data-sheets/DS18B20.pdf,50,50
 PCB,"Handmade printed circuit board instead of Arduino",1,-,-,-,15,15
-16x2 LCD with I2C Adapter,"Instead LCD with shield",1,L9110,"L9110",https://www.laskakit.cz/user/related_files/L9110_2channel_motor_driver.pdf,60,60
+16x2 LCD with I2C Adapter,"Instead LCD with shield",1,Hitachi,"HD44780U",https://soldered.com/productdata/2015/02/Soldered_HD44780_datasheet.pdf,75,75
+
