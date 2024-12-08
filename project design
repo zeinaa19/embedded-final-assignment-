@@ -8,8 +8,14 @@
 
 ## Introduction
 
+For our project in this embedded course assignment, we were required to create a simple climate control system that reads temperature and then store the temperature value in the memory. We are required to use a 16x2 LCD interface that displays the controlled temperature sensor (LM35) using ADC reading. Three push buttons were used to control and reset the upper and lower temperature limits, and a motor and battery were added to the circuit. The motor is connected to a fan and designs to spin clockwise when the temperature is within range, and counter-clockwise when out of range.
+
 
 ### Purpose
+
+We created a circuit with the functionality of using an LM35 temperature sensor to read the surround temperature, this temperature is then displayed onto the LCD screen. The circuit also includes three push buttons, the functionality of these is to control the lower, upper limits of the temperature requirements, and to reset these limits. All these factors will also be displayed onto the LCD for the user to view. Once the lower and upper limits are pressed their values will increase by increments of 5. If the temperature detected from the LM35 is within the range of the lower and upper limit than “OK” will be displayed on the LCD and the motor will turn clockwise causing the fan to also turn. If the temperature is out of range then the motor will turn counter-clockwise as will the fan, and also “NOK” will be displayed onto the LCD.
+
+
 
 
 ### Scope
