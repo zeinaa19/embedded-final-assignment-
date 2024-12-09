@@ -104,13 +104,23 @@ This circuit uses Arduino to portray analog to digital conversion and the displa
 
 ## Integration and Configuration
 ### Static Files
-Typically a module consists of C and H files but other file types may exist. List all files that form this module
+
 
 | File name | Contents                             |
 |-----------|--------------------------------------|
-| abc_xxx.c | Source code file, add detail         |
-| abc.h     | Export Interface file                |
-| abci.h    | Import and Module Configuration file |
+| Lcd.h | LCD header file containing lcd functions |
+| Lcd.ino    | all LCD initialization and functions included|
+| Uart.h   | uart header file containing uart functions  |
+| Uart.ino   |all uart initialization and functions included |
+| analogdig.h  | adc header file containing  adc functions |
+| analogdig.ino   | all adc initialization and functions included |
+| motorr.h   | motor header file containing  motor functions |
+| motorr.ino   | all motor initialization and functions included |
+| pwm.h  | pwm header file containing  pwm functions |
+| pwwm.ino   | all pwm initialization and functions included |
+| mainapp.ino  | includes functions from other files and is where the main code is located the makes the project function |
+
+
 
 ### Include Structure
 
