@@ -47,7 +47,7 @@ Can add further elements that could improve our system like user friendly interf
 The climate control system that we did in this project is used in many industrial applications. It is used in HVAC systems to keep indoor are at an acceptable temperature while also saving energy. In industrial machine cooling, the system keeps the equipment from overheating by adjusting the fan operation. It is used in server rooms and data centers as keeping certain temperature ranges is important to prevent equipment from malfunctioning. The system is also used in agriculture to control the temperature in greenhouses and storage buildings. Lastly, in batteries to make them work better and last longer.
 ## Architectural Overview
 
-This section describes where this module resides in the context of the software architecture
+
 ```plantuml
 @startuml
 
@@ -74,7 +74,7 @@ node "pwm module"{
 ```
 
 ### Assumptions & Constraints
-Indicate constraints of the low level design and any assumptions appropriate for the design.
+
 
 ```plantuml
 @startuml
@@ -124,7 +124,7 @@ This circuit uses Arduino to portray analog to digital conversion and the displa
 
 ### Include Structure
 
-If there is a complex file structure e.g. more than one c-file or more than two h-files use a diagram to explain the relationship between the source and dependent include files.
+
 
 ```plantuml
 @startuml
@@ -145,7 +145,8 @@ package "pkg" {
 ```
 
 ### Configuration
-Any required hardware/software or system configuration that can be adjusted a header file shall be detailed in this section. This can be placed in the table below.
+
 | Name | Value range | Description |
 |------|-------------|-------------|
-|      |             |             |
+| upper temperature limit |  0- infinite but limited by free character spaces on the LCD | This is the  maximum and minimum value range that the upper temperature limit can be set as|
+| lower temperature limit |  0- infinite but limited by free character spaces on the LCD    | This is the maximum and minimum value range that the lower temperature limit can be set as|
