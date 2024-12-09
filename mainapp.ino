@@ -28,7 +28,7 @@ int main(void) { // beginning of main code that returns a integer and doesn't re
         // Read sensor value
         sensorreading = (Adc_ReadChannel(1)*150*5)/(1023*1.5);  //Read the ADC value from channel 1, convert to temperature, and store in sensorreading
         itoa(sensorreading, buffer, 10); //Convert the temperature reading to a string and store it in buffer
-        Uart_SendString(buffer, 4); //  Send the temperature string through UART
+        Uart_SendString(buffer, 4); //  display on serial monitor for double checking sensor input
         Uart_SendChar('\n'); //  this sends a newline character to indicate the end of the data
 
         // Display sensor and limit values on LCD
